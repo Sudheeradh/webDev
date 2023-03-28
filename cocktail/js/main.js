@@ -11,14 +11,17 @@ function loadData(dataArr) {
     cocktailIndex = 0;
     cocktailCollection = dataArr;
 
-    console.log(cocktailCollection);;
-    render();
+    // console.log(cocktailCollection);
+    imgElement.src = cocktailCollection[cocktailIndex].strDrinkThumb;
+    imgElement.onload = render;
 }
 
 function render() {
 
+    imgElement.src = cocktailCollection[cocktailIndex].strDrinkThumb;
+
     let name = document.querySelector('h2')
-    name.innerText = `Name: ${cocktailCollection[cocktailIndex].strDrink}`
+    name.innerText = `${cocktailCollection[cocktailIndex].strDrink}`
 
     instructions.innerHTML = ``
 
@@ -28,7 +31,9 @@ function render() {
     instructions.innerHTML = `<ol> ${insBr} </ol>`
     instructionsHeading.parentNode.insertBefore(instructions, instructionsHeading.nextSibling);
 
-    imgElement.src = cocktailCollection[cocktailIndex].strDrinkThumb;
+    if (hidden === true){
+        unhide();
+    }
 }
 
 function getData() {
@@ -49,8 +54,15 @@ function nextCocktail() {
         return;
     }
 
+    if (cocktailCollection.length === 1) {
+        alert("Only one cocktail is known")
+        return;
+    }
+
     cocktailIndex = (cocktailIndex + 1) % cocktailCollection.length;
-    render();
+    
+    imgElement.src = cocktailCollection[cocktailIndex].strDrinkThumb;
+    imgElement.onload = render;
 }
 
 function prevCocktail() {
@@ -60,22 +72,35 @@ function prevCocktail() {
         return;
     }
 
+    if (cocktailCollection.length === 1) {
+        alert("Only one cocktail is known")
+        return;
+    }
+
     if (cocktailIndex === 0) {
         cocktailIndex = cocktailCollection.length - 1;
     } else {
         cocktailIndex--;
     }
 
-    render();
+    imgElement.src = cocktailCollection[cocktailIndex].strDrinkThumb;
+    imgElement.onload = render;
 }
 
-let btn = document.querySelector('#getData');
+function unhide() {
+        document.querySelector('#main').classList.remove("hidden");
+        hidden = false;
+}
+
+let getCocktailBtn = document.querySelector('#getData');
 let nextBtn = document.querySelector('#next');
 let prevBtn = document.querySelector('#prev');
 let inp = document.querySelector('input');
-let instructionsHeading = document.querySelector('h3');
-let instructions =  document.querySelector('p');
+let instructionsHeading = document.querySelector('#instructions-heading');
+let instructions =  document.querySelector('#instructions');
 let imgElement = document.querySelector('img');
+
+let hidden = true;
 
 let cocktailCollection = null;
 let cocktailIndex = 0;
@@ -83,6 +108,7 @@ let cocktailIndex = 0;
 
 
 
-btn.addEventListener('click', getData);
+getCocktailBtn.addEventListener('click', getData);
 nextBtn.addEventListener('click', nextCocktail);
 prevBtn.addEventListener('click', prevCocktail);
+

@@ -5,24 +5,52 @@
     	<meta name="description" content="This is where your description goes">
     	<meta name="keywords" content="one, two, three">
 
-		<title>Title in the tab</title>
+		<title>Cocktails</title>
 
 		<!-- external CSS link -->
-		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/style.css">
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500&display=swap" rel="stylesheet">
 	</head>
 	<body>
 
-		<h1>Which Cocktail?</h1>
-		<input type="text" name="" value="">
-		<button id="getData" type="button" name="button">Get Cocktail</button> <br>
-		<button id="next" type="button" name="next">Next</button>
-		<button id="prev" type="button" name="prev">Prev</button>
+		<div class="header">
+			<h1>Which Cocktail?</h1>
+			<div class="search">
+				<input type="text" name="" value="">
+				<button id="getData" type="button" name="button">Get Cocktail</button>
+			</div>
+		</div>
 
-		<h2>Name</h2>
-		<img src="" alt="">
-		<h3>Instructions</h3>
-		<p></p>
+		<div id="main" class="hidden">
+			
+
+			<h2>Name</h2>
+
+			<article>
+
+				<div class="image">
+					<img src="" alt="">
+				</div>
+
+				<div class="info">
+					<h3 id="ingredients-heading">Ingredients</h3>
+					<p id="ingredients"></p>
+					<h3 id="instructions-heading">Instructions</h3>
+					<p id="instructions"></p>
+				</div>
+
+			</article>
+
+			<nav>
+				<button id="prev" type="button" name="prev">Prev</button>
+				<button id="next" type="button" name="next">Next</button>
+			</nav>
+		</div>
+
 
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
