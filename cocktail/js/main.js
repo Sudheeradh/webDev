@@ -1,7 +1,6 @@
 let url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s="
 
 function loadData(dataArr) {
-    // console.log(dataArr)
     if (dataArr === null) {
         alert('Enter proper cocktail name!');
         location.reload();
@@ -11,30 +10,50 @@ function loadData(dataArr) {
     cocktailIndex = 0;
     cocktailCollection = dataArr;
 
-    // console.log(cocktailCollection);
     imgElement.src = cocktailCollection[cocktailIndex].strDrinkThumb;
     imgElement.onload = render;
 }
 
 function render() {
+    let name = document.querySelector('h2');
+    name.innerText = `${cocktailCollection[cocktailIndex].strDrink}`;
 
-    imgElement.src = cocktailCollection[cocktailIndex].strDrinkThumb;
-
-    let name = document.querySelector('h2')
-    name.innerText = `${cocktailCollection[cocktailIndex].strDrink}`
-
-    instructions.innerHTML = ``
-
-    let ins = cocktailCollection[cocktailIndex].strInstructions.split('. ')
-    let insBr = ins.map(step => '<li> ' + step + ' </li>').join(' ')
-
-    instructions.innerHTML = `<ol> ${insBr} </ol>`
-    instructionsHeading.parentNode.insertBefore(instructions, instructionsHeading.nextSibling);
+    renderInstructions();
+    renderIngredients();
 
     if (hidden === true){
         unhide();
     }
 }
+
+function renderInstructions() {
+    let ins = cocktailCollection[cocktailIndex].strInstructions.split('. ')
+    let insBr = ins.map(step => '<li> ' + step + ' </li>').join(' ')
+
+    instructions.innerHTML = `<ol> ${insBr} </ol>`
+    instructionsHeading.parentNode.insertBefore(instructions, instructionsHeading.nextSibling);
+}
+
+function renderIngredients() {
+
+    let ing = [];
+    ingInd = 1;
+    while(cocktailCollection[cocktailIndex][`strIngredient${ingInd}`] !== null) {
+        ing.push(cocktailCollection[cocktailIndex][`strIngredient${ingInd}`]);
+        ingInd++
+    }
+
+    ingInd = 1;
+    while(cocktailCollection[cocktailIndex][`strMeasure${ingInd}`] !== null) {
+        ing[ingInd - 1] += ": " + cocktailCollection[cocktailIndex][`strMeasure${ingInd}`];
+        ingInd++
+    }
+
+    let ingBr = ing.map(item => '<li> ' + item + ' </li>').join(' ')
+    ingredients.innerHTML = `<ol> ${ingBr} </ol>`
+    ingredientsHeading.parentNode.insertBefore(ingredients, ingredientsHeading.nextSibling);
+}
+
 
 function getData() {
     let cocktail = inp.value;
@@ -98,6 +117,8 @@ let prevBtn = document.querySelector('#prev');
 let inp = document.querySelector('input');
 let instructionsHeading = document.querySelector('#instructions-heading');
 let instructions =  document.querySelector('#instructions');
+let ingredientsHeading = document.querySelector('#ingredients-heading');
+let ingredients =  document.querySelector('#ingredients');
 let imgElement = document.querySelector('img');
 
 let hidden = true;
