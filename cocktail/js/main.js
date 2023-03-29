@@ -15,7 +15,6 @@ function loadData(dataArr) {
 }
 
 function render() {
-    console.log(cocktailCollection[cocktailIndex])
     let name = document.querySelector('h2');
     name.innerText = `${cocktailCollection[cocktailIndex].strDrink}`;
 
