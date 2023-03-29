@@ -10,6 +10,13 @@
 /******************************************
 /* LAYOUT
 /*******************************************/
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
 img{
   width: 100%;
   height: auto;
@@ -157,7 +164,7 @@ ol {
   }
 
   #main{
-    height: auto;
+    height: 80vh;
   }
 
   article{
