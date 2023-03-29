@@ -15,6 +15,7 @@ function loadData(dataArr) {
 }
 
 function render() {
+    console.log(cocktailCollection[cocktailIndex])
     let name = document.querySelector('h2');
     name.innerText = `${cocktailCollection[cocktailIndex].strDrink}`;
 
@@ -44,7 +45,7 @@ function renderIngredients() {
     }
 
     ingInd = 1;
-    while(cocktailCollection[cocktailIndex][`strMeasure${ingInd}`] !== null) {
+    while(cocktailCollection[cocktailIndex][`strMeasure${ingInd}`] !== null && ingInd <= ing.length) {
         ing[ingInd - 1] += ": " + cocktailCollection[cocktailIndex][`strMeasure${ingInd}`];
         ingInd++
     }
