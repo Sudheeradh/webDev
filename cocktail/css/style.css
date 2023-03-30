@@ -66,6 +66,7 @@ nav {
   display: flex;
   justify-content: space-evenly;
   gap: 5rem;
+  margin-top: 1rem;
 }
 
 button {
