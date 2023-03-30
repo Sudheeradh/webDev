@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1 id="heading">NASA</h1>
+        <p id="siteDesc"><span class="unimp">Select a date to get the</span> <br> <span class="apd">Astronomy Picture Of The Day</span></p>
+
+        <div class="input">
+            <input id="date" type="date">
+            <button>Get</button>
+        </div>
+    </header>
+
+    <div class="lds-ripple hidden"><div></div><div></div></div>
+
+    <article class="hidden">
+        <img src="">
+        <iframe src=""></iframe>
+        <p id="apodDesc"></p>
+    </article>
+</body>
+</html>
