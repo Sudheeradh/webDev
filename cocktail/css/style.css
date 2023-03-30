@@ -91,6 +91,10 @@ button {
     height: auto;
   }
 
+  .body {
+    height: auto;
+  }
+
   #main {
     width: 100%;
     justify-content: flex-start;

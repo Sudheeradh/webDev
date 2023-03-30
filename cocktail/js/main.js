@@ -113,6 +113,9 @@ function unhide() {
 
         const desc = document.querySelector('#description');
         desc.classList.add('hidden');
+
+        const body = document.querySelector('body');
+        body.classList.add('body');
 }
 
 let getCocktailBtn = document.querySelector('#getData');
