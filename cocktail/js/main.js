@@ -107,8 +107,12 @@ function prevCocktail() {
 }
 
 function unhide() {
-        document.querySelector('#main').classList.remove("hidden");
+        hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach(element => element.classList.remove('hidden'));
         hidden = false;
+
+        const desc = document.querySelector('#description');
+        desc.classList.add('hidden');
 }
 
 let getCocktailBtn = document.querySelector('#getData');

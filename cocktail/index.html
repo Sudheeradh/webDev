@@ -19,38 +19,42 @@
 		<div class="header">
 			<h1>Which Cocktail?</h1>
 			<div class="search">
-				<input type="text" name="" value="">
-				<button id="getData" type="button" name="button">Get Cocktail</button>
+				<input type="text" name="" value="" placeholder="Enter Cocktail Name">
+				<button id="getData" type="button" name="button">Search</button>
 			</div>
 		</div>
 
+		<p id="description">Enter a cocktail name to find out it's recipe</p>
+
+
 		<div id="main" class="hidden">
-			
 
 			<h2>Name</h2>
 
 			<article>
-
+				
 				<div class="image">
 					<img src="" alt="">
 				</div>
 
-				<div class="info">
+				<section class="info">
 					<h3 id="ingredients-heading">Ingredients</h3>
 					<p id="ingredients"></p>
 					<h3 id="instructions-heading">Instructions</h3>
 					<p id="instructions"></p>
-				</div>
+				</section>
 
 			</article>
 
-			<nav>
-				<button id="prev" type="button" name="prev">Prev</button>
-				<button id="next" type="button" name="next">Next</button>
-			</nav>
+		</div>
+
+
+		<nav class="hidden">
+			<button id="prev" type="button" name="prev">Prev</button>
+			<button id="next" type="button" name="next">Next</button>
+		</nav>
 
 
 		<script type="text/javascript" src="js/main.js"></script>
-		</body>
 	</body>
 </html>
