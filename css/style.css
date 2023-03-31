@@ -1,0 +1,19 @@
+li {
+  margin: 2rem;
+  border: 2px #ff6b6bff solid;
+  border-radius: 1rem;
+  padding: 1rem;
+  width: auto;
+  display: inline-block;
+  font-weight: 300;
+  font-size: 3rem;
+  background: linear-gradient(271.72deg, #a2facf 7.09%, #64acff 96.61%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body {
+  background: rgb(13,17,23);
+  font-family: 'Comfortaa', cursive, sans-serif;
+}

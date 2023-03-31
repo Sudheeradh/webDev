@@ -156,12 +156,10 @@ nav button {
 h1 {
   font-size: 4rem;
   font-weight: 400;
-  color: #ff6b6bff;
 }
 
 h2{
   margin-top: 1.5rem;
-  color: #4ecdc4ff;
   font-weight: 300;
   font-size: 3rem;
   text-align: center;
@@ -237,15 +235,3 @@ h1, h2 {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-/* @media screen and (min-width: 320px )and (max-width: 767px) {
-  body {
-    font-size: 3rem;
-  }
-  h1, h2 {
-    font-size: 4rem;
-  }
-  h3 {
-    font-size: 3.5rem;
-  }
-} */
