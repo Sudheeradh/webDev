@@ -7,8 +7,12 @@ fetch('https://dog.ceo/api/breeds/image/random')
 
 function insertImage(imgLink) {
     imgElement = document.querySelector('img');
+    loading = document.querySelector('.lds-ripple');
     imgElement.setAttribute('src', imgLink);
-    imgElement.onload = () => {imgElement.classList.remove('hidden');}
+    imgElement.onload = () => {
+        loading.classList.add('hide');
+        imgElement.classList.remove('hidden');
+    }
 }
 
 function refresh() {
