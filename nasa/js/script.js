@@ -40,7 +40,7 @@ function loadData(data) {
     } else if (info.media_type === "video") {
         iframe.src = info.url;
         iframe.onload = () => {render(iframe)};
-    } else {alert("Error")}
+    } else {{alert("Select a Past date"); location.reload()}}
 }
 
 function render(media) {
